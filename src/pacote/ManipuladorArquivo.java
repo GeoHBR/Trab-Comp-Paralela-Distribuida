@@ -23,11 +23,14 @@ public class ManipuladorArquivo {
 					try {
 						BufferedReader buffRead = Files.newBufferedReader(path);
 						String linha;
+						int count =0;
 						
 						while ((linha = buffRead.readLine()) != null && !encontrado) {
 							System.out.println(linha);
+							count++;
 							if(linha.equalsIgnoreCase(nome)) {
-								System.out.println("ACHADO O MALPARIDO:" +nome);
+								JOptionPane.showMessageDialog(null, "Nome encontrado: " +nome +"\nNa Linha: "+count+"\nDo Arquivo: "+path);
+								System.out.println("Nome encontrado: " +nome +"\nNa Linha:"+count+"\nNo Arquivo: "+path);
 								encontrado = true;
 							}
 						}
